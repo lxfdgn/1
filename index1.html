@@ -165,7 +165,14 @@
                                             2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span
                                                 class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
                                         </div>
-                                        
+                                 <div class="weather">
+                                            <span id="city_text">天气</span>&nbsp;
+                                            <span id="wea_text">加载失败</span>&nbsp;
+                                            <span id="tem_night"></span>°C~
+                                            <span id="tem_day"></span>°C
+                                            <!-- <span id="win_text"></span>
+                                            <span id="win_speed"></span> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -283,46 +290,46 @@
                     <!--网站链接-->
                     <div class="row">
                         <div class="col">
-                            <a href="https://www.menghuany.cn//" target="_blank">
+                            <a href="https://lxf20081031.freshping.io/reports?check_id=863436" target="_blank">
                                 <div class="link-card cards">
                                     <span class="link-name">站点监测</span>
                                 </div>
                             </a>
                         </div>
                         <div class="col 2">
-                            <a href="https://www.menghuany.cn//" target="_blank">
+                            <a href="https://app.netlify.com/sites/lzdwz/settings/domain" target="_blank">
                                 <div class="link-card cards">
-                                    <span class="link-name">播放器</span>
+                                    <span class="link-name">网站托管</span>
                                 </div>
                             </a>
                         </div>
                         <div class="col">
-                            <a href="https://www.menghuany.cn//" target="_blank">
+                            <a href="https://my.freenom.com/clientarea.php?action=domains" target="_blank">
                                 <div class="link-card cards">
-                                    <span class="link-name">编辑器</span>
+                                    <span class="link-name">域名管理</span>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="row" style="margin-top: 1.5rem;">
                         <div class="col">
-                            <a href="https://www.menghuany.cn//" target="_blank">
+                            <a href="https://www.zxx.edu.cn/" target="_blank">
                                 <div class="link-card cards">
-                                    <span class="link-name">时光相册</span>
+                                    <span class="link-name">智慧教育平台</span>
                                 </div>
                             </a>
                         </div>
                         <div class="col 2">
-                            <a href="https://www.menghuany.cn//" target="_blank">
+                            <a href="https://zhsz.bjedu.cn/web/login/index" target="_blank">
                                 <div class="link-card cards">
-                                    <span class="link-name">文件库</span>
+                                    <span class="link-name">学生综合素质评价</span>
                                 </div>
                             </a>
                         </div>
                         <div class="col">
                             <a id="openmore">
                                 <div class="link-card cards">
-                                    <span class="link-name">更多</span>
+                                    <span class="link-name">壁纸设置</span>
                                 </div>
                             </a>
                         </div>
@@ -345,12 +352,7 @@
                                         class="iconfont icon-github1"></i></a>
                             </div>
                             <!--更多内容-->
-                            <div class="accordion" id="accordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
+                 
                                             壁纸设置
                                         </button>
                                     </h2>
@@ -378,52 +380,14 @@
                                                         <input type="radio" class="set-wallpaper" style="display: none;"
                                                             id="radio4" value="4" name="wallpaper-type">
                                                         <label for="radio4">随机动漫</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--更新日志-->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            更新日志
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            <div class="upnote">
-                                                <span class="uptext"><i
-                                                        class="iconfont icon-plus"></i>&nbsp;壁纸个性化设置</span>
-                                                <span class="uptext"><i
-                                                        class="iconfont icon-plus"></i>&nbsp;音乐播放器支持音量控制</span>
-                                                <span class="uptext"><i class="iconfont icon-wrench-fill"></i>&nbsp;修复
-                                                    CDN 加载缓慢</span>
-                                                <span class="uptext"><i
-                                                        class="iconfont icon-wrench-fill"></i>&nbsp;时光胶囊显示错误</span>
-                                                <span class="uptext"><i
-                                                        class="iconfont icon-wrench-fill"></i>&nbsp;移动端动画及细节</span>
-                                                <span class="uptext"><i
-                                                        class="iconfont icon-wrench-fill"></i>&nbsp;优化部分动画及细节</span>
-                                                <span class="uptext"><i class="iconfont icon-undo"></i>&nbsp;<a
-                                                        href="./old/" style="color:#efefef">点击此处返回旧版站点</a></span>
+                                   
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--Aplayer-->
-                        <div class="box-right">
-                            <div id="aplayer"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </main>
         <!-- 版权信息 -->
         <footer id="footer" class="fixed-bottom footer">
@@ -434,8 +398,7 @@
 
                 Made&nbsp;by&nbsp;<a href="https://lzdwz.cf" target="_blank">靓仔</a>
             </div>
-            <!-- 歌词显示 -->
-            <div id="lrc"></div>
+
         </footer>
     </section>
     <!-- noscript -->
