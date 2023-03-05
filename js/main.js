@@ -93,7 +93,7 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43986679&appsecret=TksqGZT7&unescape=1')
+fetch('https://www.yiketianqi.com/free/day?appid=95485298&appsecret=X5hfvjdb&unescape=1&city=')
     .then(response => response.json())
     .then(data => {
         $('#wea_text').html(data.wea)
@@ -315,28 +315,13 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = '無名の主页'
-var title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
-  | | | |\\/| |\\___ \\  \\   /    \\   /  
- _| |_| |  | |____) |  | |      | |   
-|_____|_|  |_|_____/   |_|      |_|                                                     
+var title1 = '靓仔的网站'
+var title2 = `                                                  
 `
 var content = `
-版 本 号：2.2
-更新日期：2022-04-12
+版 本 号：2.0.1
+更新日期：2023-03-05
 
-更新说明：
-1. 新增 壁纸个性化设置
-2. 新增 音乐播放器支持音量控制
-3. 优化 部分动画及细节
-4. 优化 页面加载缓慢
-5. 优化 音乐延迟加载
-
-主页:  https://www.imsyy.top
-Github:  https://github.com/imsyy/home
 `
 console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
