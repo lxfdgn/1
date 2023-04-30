@@ -30,9 +30,11 @@ window.addEventListener('load', function () {
             timeout: 2500,
             title: hello,
             message: '欢迎来到我的主页'
+
         });
     }, 800);
 }, false)
+
 
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
@@ -90,20 +92,88 @@ fetch('https://v1.hitokoto.cn?max_length=24')
     })
     .catch(console.error)
 
+let times = 0;
+$('#hitokoto').click(function () {
+    if (times == 0) {
+        times = 1;
+        let index = setInterval(function () {
+            times--;
+            if (times == 0) {
+                clearInterval(index);
+            }
+        }, 1000);
+        fetch('https://v1.hitokoto.cn?max_length=24')
+            .then(response => response.json())
+            .then(data => {
+                $('#hitokoto_text').html(data.hitokoto)
+                $('#from_text').html(data.from)
+            })
+            .catch(console.error)
+    } else {
+        iziToast.show({
+            timeout: 1000,
+                            iconUrl: './img/icon/warn.png',
+            message: '你点太快了吧',
+        });
+    }
+});
+
 //获取天气
-//每日限量 100 次
-//请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=95485298&appsecret=X5hfvjdb&unescape=1&city=')
-    .then(response => response.json())
-    .then(data => {
-        $('#wea_text').html(data.wea)
-        $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        // $('#win_text').html(data.win)
-        // $('#win_speed').html(data.win_speed)
-    })
-    .catch(console.error)
+//请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
+//请前往 https://dev.qweather.com/ 申请 key
+const add_id = "jlirofiugtpoovgk"; // app_id
+const app_secret = "eXBTWkxvRzExd0NUSEJCdVFkNzVmdz09"; // app_secret
+const key = "ec52dd2a7d5d4506b45c779cc2ca503b" // key
+function getWeather() {
+    fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
+        .then(response => response.json())
+        .then(data => {
+            let str = data.data.city
+            let city = str.replace(/市/g, '')
+            $('#city_text').html(city);
+            fetch("https://geoapi.qweather.com/v2/city/lookup?location=" + city + "&number=1&key=" + key)
+                .then(response => response.json())
+                .then(location => {
+                    let id = location.location[0].id
+                    fetch("https://devapi.qweather.com/v7/weather/now?location=" + id + "&key=" + key)
+                        .then(response => response.json())
+                        .then(weather => {
+                            $('#wea_text').html(weather.now.text)
+                            $('#tem_text').html(weather.now.temp + "°C&nbsp;")
+                            $('#win_text').html(weather.now.windDir)
+                            $('#win_speed').html(weather.now.windScale + "级")
+                        })
+                })
+        })
+        .catch(console.error);
+}
+
+getWeather();
+
+let wea = 0;
+$('#upWeather').click(function () {
+    if (wea == 0) {
+        wea = 1;
+        let index = setInterval(function () {
+            wea--;
+            if (wea == 0) {
+                clearInterval(index);
+            }
+        }, 60000);
+        getWeather();
+        iziToast.show({
+            timeout: 2000,
+                            iconUrl: './img/icon/天气.png',
+            message: '实时天气已更新'
+        });
+    } else {
+        iziToast.show({
+            timeout: 1000,
+                            iconUrl: './img/icon/warn.png',
+            message: '请稍后再更新哦'
+        });
+    }
+});
 
 //获取时间
 var t = null;
@@ -345,7 +415,28 @@ for (var day of days) {
         }, false);
     }
 }
-
+//建站庆祝
+var myDate = new Date;
+var mon = myDate.getMonth() + 1;
+var date = myDate.getDate();
+var days = ['5.1'];
+for (var day of days) {
+    var d = day.split('.');
+    if (mon == d[0] && date == d[1]) {
+        document.write(
+            '<style>html;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
+        )
+        $("#change").html("Happy&nbsp;in&nbsp;happy");
+        $("#change1").html("今天是“靓仔的网站”建站一周年，本站主页已切换为欢庆模式");
+        window.addEventListener('load', function () {
+            iziToast.show({
+                timeout: 14000,
+                iconUrl: './img/icon/lihua.png',
+                message: '今天是“靓仔的网站”建站一周年'
+            });
+        }, false);
+    }
+}
 
 //控制台输出
 var styleTitle1 = `
@@ -364,8 +455,8 @@ var title1 = '靓仔的网站'
 var title2 = `                                                  
 `
 var content = `
-版 本 号：2.0.4
-更新日期：2023-04-02
+版 本 号：2.1.0
+更新日期：2023-05-01
 
 `
 console.log(`%c${title1} %c${title2}
