@@ -375,28 +375,6 @@ for (var day of days) {
 var myDate = new Date;
 var mon = myDate.getMonth() + 1;
 var date = myDate.getDate();
-var days = ['7.7'];
-for (var day of days) {
-    var d = day.split('.');
-    if (mon == d[0] && date == d[1]) {
-        document.write(
-            '<style>html{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
-        )
-        $("#change").html("Silence&nbsp;in&nbsp;silence");
-        $("#change1").html("今天是七七事变纪念日，本站主页已切换为黑白模式");
-        window.addEventListener('load', function () {
-            iziToast.show({
-                timeout: 14000,
-                iconUrl: './img/icon/candle.png',
-                message: '今天是七七事变纪念日'
-            });
-        }, false);
-    }
-}
-//自动变灰
-var myDate = new Date;
-var mon = myDate.getMonth() + 1;
-var date = myDate.getDate();
 var days = ['9.18'];
 for (var day of days) {
     var d = day.split('.');
@@ -477,7 +455,7 @@ var title1 = '靓仔的网站'
 var title2 = `                                                  
 `
 var content = `
-版 本 号：3.0.0
+版 本 号：2.1.0
 更新日期：2023-05-01
 
 `
