@@ -2,28 +2,40 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>靓仔的网站——终端检测</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="cnm.sb.ico">
+<title>靓仔的网站——安全检查</title>
 </head>
 <body>
-<script type="text/javascript">
-function browserRedirect() {
-var sUserAgent= navigator.userAgent.toLowerCase();
-var bIsIpad= sUserAgent.match(/ipad/i) == "ipad";
-var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os";
-var bIsMidp= sUserAgent.match(/midp/i) == "midp";
-var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb";
-var bIsAndroid= sUserAgent.match(/android/i) == "android";
-var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce";
-var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile";
-if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-window.location.href= 'indexA.html';
-} else {
-window.location= 'indexB.html';
-}
-}
-browserRedirect();
-</script>
-
+<center>
+<div class="login">
+<h1>相册登录</h1>
+<div class="text">
+<i class="fa fa-user-o" aria-hidden="true"></i><!-- Font Awesome -->
+<input type="text" placeholder="用户名" id="name">
+</div>
+<div class="text">
+<i class="fa fa-lock" aria-hidden="true"></i><!-- Font Awesome -->
+<input type="password" placeholder="密码" id="pass">
+</div>
+<button onclick="login()">登录</button>
+</div>
 </body>
+<script type="text/javascript">
+function login(){
+var username = document.getElementById("name").value;
+var password = document.getElementById("pass").value;
+if(username=="刘宣甫" && password=="15038731"){
+alert("登录成功");
+window.location.href = "index.html";
+return false;
+}
+else{
+alert("账号或密码错误");
+window.location.href= "#";
+return false;
+}
+}
+</script>
+</html>
 </html>
