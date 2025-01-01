@@ -59,7 +59,6 @@ body{background-color: #222222}
 </head>
 
 <body>
-   
 <!--加载动画-->
     <div id="loading-box">
         <div class="loading-left-bg"></div>
@@ -110,11 +109,23 @@ body{background-color: #222222}
 								</div>
 								<!--社交链接-->
                             <div class="social" id="social">
-                                <a href="https://github.com/lxfdgn" class="link" id="github" target="_blank">
-                                    <i class="iconfont icon-github"></i>
+                                <a href="https://github.com/hsBUPT" class="link" id="github" style="margin-left: 4px"
+                                    target="_blank">
+                                    <i class="fa-brands fa-github"></i>
                                 </a>
-                                <a href="mailto:lxf20081031@gmail.com" class="link" id="email">
-                                    <i class="iconfont icon-youxiang"></i>
+                                <a href="https://wpa.qq.com/msgrd?v=3&uin=2257757362&site=qq&menu=yes" class="link"
+                                    id="qq" target="_blank">
+                                    <i class="fa-brands fa-qq"></i>
+                                </a>
+                                <a href="mailto:2257757362@qq.com" class="link" id="email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                                <a href="https://space.bilibili.com/1410673018" class="link" id="bilibili"
+                                    target="_blank">
+                                    <i class="fa-brands fa-bilibili"></i>
+                                </a>
+                                <a href="https://t.me/BUPT_hs" class="link" id="telegram" target="_blank">
+                                    <i class="fa-brands fa-telegram"></i>
                                 </a>
                                 <a id="link-text">通过这里联系我</a>
                             </div>
@@ -122,7 +133,7 @@ body{background-color: #222222}
                     </div>
                     <!--第二屏 Logo-->
                     <div class="logo cards" style="display: none" id="changemore">
-                        <a class="logo-text">lzxz.us.kg</a>
+                        <a class="logo-text" id="logo-text-small">imsyy.top</a>
                     </div>
                     <div class="col right">
                         <div class="main-right">
@@ -133,15 +144,14 @@ body{background-color: #222222}
                                     <div class="hitokoto cards" id="hitokoto">
                                         <!--切换音乐-->
                                         <div class="open-music fixed-top" id="open-music">
-                                            <i class="iconfont icon-music"></i>
+                                            <i class="fa-solid fa-compact-disc"></i>
                                             <span>&nbsp;打开音乐播放器</span>
-               
                                         </div>
                                         <!--切换音乐结束-->
                                         <div class="hitokoto-all">
-                                            <div class="hitokoto-text"><span id="hitokoto_text">每一个人都应该明确自己的方向和位置</span>
+                                            <div class="hitokoto-text"><span id="hitokoto_text">革命尚未成功，同志仍需努力</span>
                                             </div>
-                                            <div class="hitokoto-from">-「&nbsp;<span id="from_text">靓仔</span>&nbsp;」
+                                            <div class="hitokoto-from">-「&nbsp;<span id="from_text">孙中山</span>&nbsp;」
                                             </div>
                                         </div>
                                     </div>
@@ -192,10 +202,12 @@ body{background-color: #222222}
 										</div>
 									</div>
 								</div>
-								<!--分隔线-->
-								<div class="line">
-								</div>
-								<!--网站链接-->
+								 <!--分隔线-->
+                            <div class="line">
+                                <i class="iconfont icon-link"></i>
+                                <span class="line-text">网站列表</span>
+                            </div>
+                            <!--网站链接-->
                             <div class="link">
                                 <!--第一组-->
                                 <div class="row">
@@ -455,33 +467,30 @@ class="iconfont icon-plus"></i>&nbsp;主页天气新增“点击更新”功能<
                 Made&nbsp;by&nbsp;<a href="https://lzxz.us.kg" target="_blank">靓之仔</a>       
  </div>
 
+            <!-- 歌词显示 -->
+            <div id="lrc"></div>
         </footer>
     </section>
-				<!-- 歌词显示 -->
-				<div id="lrc"></div>
-			</footer>
-		</section>
-		<!-- sw.js -->
-		<script>
-			if ("serviceWorker" in navigator) {
-				window.addEventListener("load", function() {
-					navigator.serviceWorker.register("sw.js");
-				});
-			}
-		</script>
+    <!-- sw.js -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js");
+            });
+        }
+    </script>
     <!-- noscript -->
     <noscript>
         <div class="noscript fixed-top">请开启 JavaScript</div>
     </noscript>
     <!-- JS -->
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/set.js"></script>
     <script type="text/javascript" src="./js/time.js"></script>
     <script type="text/javascript" src="./js/js.cookie.js"></script>
-    <script type="text/javascript" src="./js/set.js"></script>
-    <script type="text/javascript" src="./js/cursor.js"></script>
     <script type="text/javascript"
-        src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.0/js/bootstrap.min.js">
-	</script>
+        src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js">
+    </script>
 		<script type="text/javascript">
 			function show_runtime() {
 				window.setTimeout("show_runtime()", 1000);
@@ -501,7 +510,7 @@ class="iconfont icon-plus"></i>&nbsp;主页天气新增“点击更新”功能<
 			}
 			show_runtime();
     </script>
-<canvas id="canvas" width="100%" height="100%"></canvas>
+
 </body>
 
 </html>
